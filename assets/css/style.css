@@ -1035,16 +1035,16 @@ hr {
     left: 0;
     background-color: #C30047; /* Set the underline color */
     transition: width 0.3s ease; /* Set the transition properties */
+    margin-bottom: 20px;
 }
 
 #navigation li a:hover::before,
-#navigation li.active a::before {
+#navigation li.active-nav a::before {
     width: 100%;
 }
 
 #navigation li.active-nav a {
     color: #C30047; /* desired color for the active link */
-    border-bottom: 2px solid #C30047;
 }
 
 
