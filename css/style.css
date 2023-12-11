@@ -737,6 +737,18 @@ a:focus {
     }
 }
 
+@media (max-width: 2000.98px) {
+    .about .about-img {
+        height: 500px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .about .about-img {
+        height: 300px;
+    }
+}
+
 
 /*******************************/
 /********* Service CSS *********/
