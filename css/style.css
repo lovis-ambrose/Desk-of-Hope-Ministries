@@ -1120,6 +1120,7 @@ a:focus {
     transform: scale(1.1);
     margin-bottom: -15px;
     transition: .3s;
+    height: 350px;
 }
 
 .team .team-item:hover img {
