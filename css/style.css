@@ -33,7 +33,7 @@ a:focus {
 .btn.btn-custom {
     padding: 12px 20px;
     text-align: center; 
-   font-size: 16px;
+    font-size: 16px;
     font-weight: 500;
     color: #777777;
     border-radius: 0;
@@ -269,6 +269,11 @@ a:focus {
 .navbar .navbar-brand img {
     max-width: 100%;
     max-height: 40px;
+}
+
+.navbar h1 {
+    margin-left: 20px;
+    color: #f8f9fa;
 }
 
 
@@ -927,10 +932,12 @@ a:focus {
     margin: 0 15px;
     overflow: hidden;
     background: #f3f6ff;
+    margin-top: 20px;
 }
 
 .causes .causes-img {
     overflow: hidden;
+    height: 200px;
 }
 
 .causes .causes-img img {
@@ -1095,6 +1102,139 @@ a:focus {
     margin: 0;
 }
 
+/*******************************/
+/********** FAQs CSS **********/
+/*******************************/
+
+.section-bg {
+    background-color: #f6f7f6;
+  }
+  
+.why-uss .content {
+    padding: 60px 100px 0 100px;
+  }
+  
+  .why-uss .content h3 {
+    font-weight: 400;
+    font-size: 34px;
+    color: #4a4c70;
+  }
+  
+  .why-uss .content h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 5px;
+  }
+  
+  .why-uss .content p {
+    font-size: 15px;
+    color: #848484;
+  }
+  
+  .why-uss .img {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  
+  .why-uss .accordion-list {
+    padding: 0 100px 60px 100px;
+  }
+  
+  .why-uss .accordion-list ul {
+    padding: 0;
+    list-style: none;
+  }
+  
+  .why-uss .accordion-list li+li {
+    margin-top: 15px;
+  }
+  
+  .why-uss .accordion-list li {
+    padding: 20px;
+    background: #fff;
+    border-radius: 4px;
+  }
+  
+  .why-uss .accordion-list a {
+    display: block;
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    padding-right: 30px;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .why-uss .accordion-list span {
+    color: #FDBE33;
+    font-weight: 600;
+    font-size: 18px;
+    padding-right: 10px;
+  }
+  
+  .why-uss .accordion-list i {
+    font-size: 24px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .why-uss .accordion-list p {
+    margin-bottom: 0;
+    padding: 10px 0 0 0;
+  }
+  
+  .why-uss .accordion-list .icon-show {
+    display: none;
+  }
+  
+  .why-uss .accordion-list a.collapsed {
+    color: #343a40;
+  }
+  
+  .why-uss .accordion-list a.collapsed:hover {
+    color: #FDBE33;
+  }
+  
+  .why-uss .accordion-list a.collapsed .icon-show {
+    display: inline-block;
+  }
+  
+  .why-uss .accordion-list a.collapsed .icon-close {
+    display: none;
+  }
+  
+  @media (max-width: 1024px) {
+  
+    .why-uss .content,
+    .why-uss .accordion-list {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .why-uss .img {
+      min-height: 400px;
+    }
+  
+    .why-uss .content {
+      padding-top: 30px;
+    }
+  
+    .why-uss .accordion-list {
+      padding-bottom: 30px;
+    }
+  }
+  
+  @media (max-width: 575px) {
+    .why-uss .img {
+      min-height: 200px;
+    }
+  }
 
 /*******************************/
 /*********** Team CSS **********/
@@ -1107,76 +1247,121 @@ a:focus {
 
 .team .team-item {
     position: relative;
-    margin-bottom: 35px;
+    background: #ffffff;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: inset 0 0 0 0 transparent;
+    transition: ease-out 0.5s;
 }
 
 .team .team-img {
     position: relative;
+    width: 50%;
     overflow: hidden;
 }
 
 .team .team-img img {
+    position: relative;
     width: 100%;
-    transform: scale(1.1);
-    margin-bottom: -15px;
-    transition: .3s;
-    height: 350px;
-}
-
-.team .team-item:hover img {
-    margin: -15px 0 0 0;
+    transition: .5s;
 }
 
 .team .team-text {
-    position: absolute;
-    width: calc(100% - 40px);
-    height: 96px;
-    bottom: 0;
-    left: 20px;
-    padding: 22px 0;
-    text-align: center;
-    background: #ffffff;
-    transition: .3s;
-    overflow: hidden;
+    position: relative;
+    width: 50%;
+    padding: 0 30px;
 }
 
 .team .team-text h2 {
+    color: #343a40;
     font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 10px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    transition: 1s;
+}
+
+.team .team-text h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    transition: 1s;
 }
 
 .team .team-text p {
     margin-bottom: 20px;
+    transition: 1s;
 }
 
 .team .team-social {
     position: relative;
-    font-size: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
-.team .team-social a {
-    display: inline-block;
+.team .team-social a.btn {
     width: 35px;
     height: 35px;
-    margin: 0 3px;
-    padding: 5px 0;
-    text-align: center;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 14px;
-    color: #4a4c70;
-    border: 2px solid #FDBE33;
-    transition: .3s;
+    font-weight: normal;
+    margin-right: 5px;
 }
 
-.team .team-social a:hover {
-    color: #20212B;
-    background: #FDBE33;
+.team .team-item:hover {
+    box-shadow: inset 800px 0 0 0 #ffc451;
 }
 
-.team .team-item:hover .team-text {
-    height: 160px;
+.team .team-item:hover .team-img img {
+    transform: scale(1.2);
 }
 
+.team .team-item:hover .team-text h2,
+.team .team-item:hover .team-text h4 {
+    color: #343a40;
+}
+
+.team .team-item:hover .team-text p {
+    color: #ffffff;
+}
+
+.team .team-item .team-social a.btn {
+    border: 2px solid #ffc451;
+}
+
+.team .team-item:hover .team-social a.btn {
+    background: #ffffff;
+}
+
+.team .team-item:hover .team-social a.btn:hover {
+    border-color: #343a40;
+}
+
+@media(max-width: 575.98px) {
+    .team .team-text {
+        padding: 0 15px;
+    }
+    
+    .team .team-text h2 {
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+
+    .team .team-text h4 {
+        margin-bottom: 5px;
+    }
+
+    .team .team-text p {
+        font-size: 14px;
+        line-height: 18px;
+        margin-bottom: 10px;
+    }
+}
 
 /*******************************/
 /******* cta *******/
@@ -1511,87 +1696,73 @@ a:focus {
 }
 
 .blog .blog-item {
+    position: relative;
     margin-bottom: 30px;
-    padding-bottom: 30px;
-    background: #f3f6ff;
 }
 
 .blog .blog-img {
+    position: relative;
     width: 100%;
+    overflow: hidden;
 }
 
 .blog .blog-img img {
     width: 100%;
+    transition: .5s;
+}
+
+.blog .blog-item:hover img {
+    transform: scale(1.1);
 }
 
 .blog .blog-text {
-    padding: 30px 30px 15px 30px;
+    position: relative;
+    padding: 30px;
+    border-right: 1px solid rgba(0, 0, 0, .07);
+    border-bottom: 1px solid rgba(0, 0, 0, .07);
+    border-left: 1px solid rgba(0, 0, 0, .07);
 }
 
-.blog .blog-text h3 {
-    font-size: 22px;
-    font-weight: 700;
-}
-
-.blog .blog-text h3 a {
-    color: #4a4c70;
-}
-
-.blog .blog-text h3 a:hover {
-    color: #FDBE33;
+.blog .blog-text h2 {
+    font-size: 25px;
+    font-weight: 600;
 }
 
 .blog .blog-text p {
-    margin: 0;
+    margin-bottom: 10px;
+}
+
+.blog .blog-item a.btn {
+    margin-top: 10px;
+    padding: 8px 15px;
+}
+
+.blog .blog-item a.btn i {
+    margin-left: 5px;
 }
 
 .blog .blog-meta {
-    margin: 0 30px;
-    padding-top: 15px;
+    position: relative;
     display: flex;
-    border-top: 1px solid rgba(0, 0, 0, .15);
-}
-
-.blog .blog-meta p {
-    margin: 0;
-    color: #777777;
-    padding: 0 30px;
-    border-right: 1px solid rgba(0, 0, 0, .15);
-}
-
-.blog .blog-meta p:first-child {
-    padding-left: 0;
-}
-
-.blog .blog-meta p:last-child {
-    padding-right: 0;
-    border: none;
-}
-
-.blog .blog-meta i {
-    color: #4a4c70;
-    margin-right: 8px
-}
-
-.blog .pagination {
     margin-bottom: 15px;
 }
 
-.blog .pagination .page-link {
-    color: #4a4c70;
-    border-radius: 0;
-    border-color: #4a4c70;
+.blog .blog-meta p {
+    margin: 0 10px 0 0;
+    font-size: 13px;
 }
 
-.blog .pagination .page-link:hover,
-.blog .pagination .page-item.active .page-link {
-    color: #FDBE33;
-    background: #4a4c70;
+.blog .blog-meta i {
+    color: #414141;
+    margin-right: 5px;
 }
 
-.blog .pagination .disabled .page-link {
-    color: #999999;
+.blog .blog-meta p:last-child {
+    margin: 0;
 }
+
+
+
 
 
 /*******************************/
