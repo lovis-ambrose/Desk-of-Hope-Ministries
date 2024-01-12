@@ -828,6 +828,9 @@ a:focus {
 /*******************************/
 /********* Donate CSS **********/
 /*******************************/
+.donate_message{
+    justify-content: center;
+}
 .donate {
     position: relative;
     width: 100%;
@@ -847,6 +850,12 @@ a:focus {
     padding: 45px 30px 15px 30px;
 }
 
+/* home donate button */
+.donate .container .donate-content .btn {
+    margin-bottom: 20px;
+    color: #f3f6ff;
+}
+
 .donate .donate-content .section-header {
     margin-bottom: 30px;
 }
@@ -860,61 +869,69 @@ a:focus {
     font-size: 18px;
 }
 
-.donate .donate-form {
-    padding: 90px 30px;
-    background: #FDBE33;
-    margin: 20px 0;
+.bank-header {
+    position: relative;
+    margin-bottom: 45px;
+    padding: 110px 0 10px 0;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../img/single.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.donate .donate-form .control-group {
-    margin-bottom: 15px;
-}
-
-.donate .donate-form .form-control {
-    height: 60px;
-    color: #ffffff;
-    padding: 0 15px;
-    border-radius: 0;
-    border: 1px solid #ffffff;
-    background: transparent;
-}
-
-.donate .donate-form .form-control::placeholder {
-    color: #ffffff;
-    opacity: 1;
-}
-
-.donate .donate-form .form-control:-ms-input-placeholder,
-.donate .donate-form .form-control::-ms-input-placeholder {
-    color: #ffffff;
-}
-
-.donate .donate-form .btn-group {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-}
-
-.donate .donate-form .btn.btn-custom {
-    padding: 15px 0;
-    width: 100%;
-    height: 60px;
-    color: #ffffff;
-    border: 1px solid #ffffff;
-    box-shadow: inset 0 0 0 0 #ffffff;
-}
-
-.donate .donate-form .btn.btn-custom:hover,
-.donate .donate-form .btn.btn-custom.active {
+.bank-header h2 {
+    position: relative;
     color: #FDBE33;
-    border: 1px solid #ffffff;
-    box-shadow: inset 0 0 0 30px #ffffff;
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 70px;
+    padding-bottom: 5px;
 }
+
+
+/* Custom CSS for responsiveness */
+@media (max-width: 767px) {
+    .by_bank table tbody tr,
+    .by_bank table thead tr {
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .by_bank table tbody td,
+    .by_bank table thead th {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .by_bank table tbody td img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Custom CSS for screens with a size of 540x720 */
+@media (max-width: 540px) {
+    .by_bank table tbody tr,
+    .by_bank table thead tr {
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .by_bank table tbody td,
+    .by_bank table thead th {
+        width: 100%;
+        box-sizing: border-box;
+        display: block;
+    }
+}
+
 
 
 
 /*******************************/
-/********** Causes CSS *********/
+/********** PROJECTS CSS *********/
 /*******************************/
 .causes {
     position: relative;
@@ -1101,140 +1118,6 @@ a:focus {
     font-weight: 600;
     margin: 0;
 }
-
-/*******************************/
-/********** FAQs CSS **********/
-/*******************************/
-
-.section-bg {
-    background-color: #f6f7f6;
-  }
-  
-.why-uss .content {
-    padding: 60px 100px 0 100px;
-  }
-  
-  .why-uss .content h3 {
-    font-weight: 400;
-    font-size: 34px;
-    color: #4a4c70;
-  }
-  
-  .why-uss .content h4 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-top: 5px;
-  }
-  
-  .why-uss .content p {
-    font-size: 15px;
-    color: #848484;
-  }
-  
-  .why-uss .img {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
-  
-  .why-uss .accordion-list {
-    padding: 0 100px 60px 100px;
-  }
-  
-  .why-uss .accordion-list ul {
-    padding: 0;
-    list-style: none;
-  }
-  
-  .why-uss .accordion-list li+li {
-    margin-top: 15px;
-  }
-  
-  .why-uss .accordion-list li {
-    padding: 20px;
-    background: #fff;
-    border-radius: 4px;
-  }
-  
-  .why-uss .accordion-list a {
-    display: block;
-    position: relative;
-    font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 500;
-    padding-right: 30px;
-    outline: none;
-    cursor: pointer;
-  }
-  
-  .why-uss .accordion-list span {
-    color: #FDBE33;
-    font-weight: 600;
-    font-size: 18px;
-    padding-right: 10px;
-  }
-  
-  .why-uss .accordion-list i {
-    font-size: 24px;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  
-  .why-uss .accordion-list p {
-    margin-bottom: 0;
-    padding: 10px 0 0 0;
-  }
-  
-  .why-uss .accordion-list .icon-show {
-    display: none;
-  }
-  
-  .why-uss .accordion-list a.collapsed {
-    color: #343a40;
-  }
-  
-  .why-uss .accordion-list a.collapsed:hover {
-    color: #FDBE33;
-  }
-  
-  .why-uss .accordion-list a.collapsed .icon-show {
-    display: inline-block;
-  }
-  
-  .why-uss .accordion-list a.collapsed .icon-close {
-    display: none;
-  }
-  
-  @media (max-width: 1024px) {
-  
-    .why-uss .content,
-    .why-uss .accordion-list {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-  
-  @media (max-width: 992px) {
-    .why-uss .img {
-      min-height: 400px;
-    }
-  
-    .why-uss .content {
-      padding-top: 30px;
-    }
-  
-    .why-uss .accordion-list {
-      padding-bottom: 30px;
-    }
-  }
-  
-  @media (max-width: 575px) {
-    .why-uss .img {
-      min-height: 200px;
-    }
-  }
 
 /*******************************/
 /*********** Team CSS **********/
@@ -1967,10 +1850,33 @@ a:focus {
     color: #FDBE33;
 }
 
+.footer .whatsapp-widget{
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.footer .whatsapp-widget img{
+    border-radius:100%;
+    width: 60px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); animation: float 2s ease-in-out infinite;
+}
+
 @media (max-width: 767.98px) {
     .footer .copyright p,
     .footer .copyright .col-md-6:last-child p {
         margin: 5px 0;
         text-align: center;
     }
+}
+
+/*******************************/
+/*********** FAQs CSS **********/
+/*******************************/
+.the_content_wrapper{
+    margin: 0 20px;
+}
+.the_content_wrapper h4 ul{
+    text-align: justify;
 }

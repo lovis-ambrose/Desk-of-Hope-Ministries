@@ -75,14 +75,20 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
                         <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About Us</a>
+                            <div class="dropdown-menu">
+                                <a href="about.html" class="dropdown-item">Our Story</a>
+                                <a href="team.html" class="dropdown-item">Meet The Team</a>
+                                <a href="faqs.html" class="dropdown-item">FAQS</a>
+                            </div>
+                        </div>
                         <a href="causes.html" class="nav-item nav-link">Projects</a>
                         <a href="event.html" class="nav-item nav-link">Events</a>
                         <a href="blog.html" class="nav-item nav-link">Blog</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Get Involved</a>
                             <div class="dropdown-menu">
-                                <a href="team.html" class="dropdown-item">Meet The Team</a>
                                 <a href="donate.html" class="dropdown-item active">Donate Now</a>
                                 <a href="volunteer.html" class="dropdown-item">Become A Volunteer</a>
                             </div>
@@ -114,13 +120,31 @@
         
         <!-- Donate Start -->
         <div class="container">
-            <div class="donate" data-parallax="scroll" data-image-src="img/donate.jpg">
+            <div class="donate_mesage">
+                <p>
+                    we invite you to join us in our mission. Your generosity can make a significant difference in empowering communities, providing essential resources, and restoring hope. Every donation, big or small, contributes to positive change. Together, we can create a brighter future. Thank you for considering supporting our cause.
+                    
+                    <hr>
+                    Once donors have given to the organization, they are entitled to a donation receipt from the organization as well as accountability on how the money given was used. Donors may also receive thanks letters, photos, and videos from the beneficiaries of their giving. All that is required of the donor is information on how they can be reached, preferably through email or WhatsApp.
+                </p>
+            </div>
+            
+            <div class="donate">
+                <div class="bank-header">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h2>Donate Via Mobile Money</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-7">
                             <div class="donate-content">
                                 <div class="section-header">
-                                    <p>Donate Now</p>
+                                    <!-- <p>Donate via Mobile Money</p> -->
                                     <h2>Let's donate to needy people for better lives</h2>
                                 </div>
                                 <div class="donate-text">
@@ -131,37 +155,80 @@
                             </div>
                         </div>
                         <div class="col-lg-5">
-                            <div class="donate-form">
-                                <form>
-                                    <div class="control-group">
-                                        <input type="text" class="form-control" placeholder="Name" required="required" />
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="email" class="form-control" placeholder="Email" required="required" />
-                                    </div>
-                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                        <label class="btn btn-custom active">
-                                            <input type="radio" name="options" checked> $10
-                                        </label>
-                                        <label class="btn btn-custom">
-                                            <input type="radio" name="options"> $20
-                                        </label>
-                                        <label class="btn btn-custom">
-                                            <input type="radio" name="options"> $30
-                                        </label>
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="text" class="form-control" placeholder="Enter Amount in figures" />
-                                    </div>
-                                    <div>
-                                        <button class="btn btn-custom" type="submit">Donate Now</button>
-                                    </div>
-                                </form>
+                            <div class="donate-momo">
+                                <div class="section-header">
+                                    <p>Mobile Money Lines</p>
+                                </div>
+                                <div class="donate-text">
+                                    <p>Mtn Mobile Money: +2567xxxxxxxx  (Registered name)</p>
+                                    <p>Airtel Mobile Money: +2567xxxxxxxx  (Registered name)</p>
+                                    <p>Utl (Msente): +2567xxxxxxxx  (Registered name)</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="bank-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>Donate Via Bank</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="by_bank">
+                <div class="table-responsive">
+                    <table class="table table-bordered" style="height: 425px;">
+                        <tbody>
+                            <tr>
+                                <td width="256"><strong>US DOLLARS</strong></td>
+                                <td width="224"><strong>UGANDA SHILLINGS</strong></td>
+                                <td width="246"><strong>DONATE NOW</strong></td>
+                            </tr>
+                            <tr>
+                                <td width="256">
+                                    <strong>Desk of Hope Ministries Ltd</strong><br />
+                                    <strong><u>Bank name</u></strong><br />
+                                    <strong>Account:</strong> xxxxxx<br />
+                                    <strong>Swift CODE:</strong> code<br />
+                                    <strong>Branch Code:</strong> 000<br />
+                                    <strong>Branch Post Code:</strong> 00<br />
+                                    <strong>Account Phone Number:</strong> +256 7xxxxxxxx<br />
+                                    <strong>Bank Branch name:</strong> Katwe<br />
+                                    <strong>Bank Address:</strong> Kampala, Uganda<br />
+                                    <strong>Bank city/suburb:</strong> Kampala<br />
+                                    <strong>Bank State/Province:</strong> Uganda
+                                </td>
+                                <td width="224">
+                                    <strong>Desk of Hope Ministries Ltd</strong><br />
+                                    <strong><u>Bank name</u><br />
+                                    Account:</strong> xxxxxx<br />
+                                    <strong>Swift CODE:</strong> code<br />
+                                    <strong>Branch Code:</strong> 000<br />
+                                    <strong>Branch Post Code:</strong> 00<br />
+                                    <strong>Account Phone Number:</strong> +256 7xxxxxxxx<br />
+                                    <strong>Bank Branch name:</strong> Katwe<br />
+                                    <strong>Bank Address:</strong> Kampala, Uganda<br />
+                                    <strong>Bank city/suburb:</strong> Kampala<br />
+                                    <strong>Bank State/Province:</strong> Uganda
+                                </td>
+                                <td width="246">
+                                    Each one of you should give what you have decided in your heart to give. You should not give if it makes you unhappy or if you feel forced to give. God loves those who are happy to give.&#8221; 
+                                    <strong>2 CORINTHIANS 9:7</strong>
+                                    <p>
+                                        <img src="./img/donate.png" alt="" width="226" height="226">
+                                    </p>
+                                    <p>&nbsp;</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div> 
         </div>
         <!-- Donate End -->
 
