@@ -7,6 +7,9 @@
         <meta content="Free Website Template" name="keywords">
         <meta content="Free Website Template" name="description">
 
+        <!-- custom reCAPTCHA -->
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
         <!-- Favicon -->
         <link href="./img/logo/logo.png" rel="icon">
 
@@ -125,12 +128,14 @@
                     <div class="row align-items-center">
                         <div class="col-lg-5">
                             <div class="volunteer-form">
-                                <form action="https://api.web3forms.com/submit" method="post" id="contact-form">
+                                <form method="post" id="form">
                                     <input type="hidden" name="access_key" value="b555f0b1-5c7e-4c1a-8d84-6bfaebb23a9b">
                                     <!-- from website -->
                                     <input type="hidden" name="from_name" value="desk-of-hope-ministries.com">
                                     <!-- to avoid spam -->
                                     <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                                    <!-- Custom redirect URL -->
+                                    <input type="hidden" name="redirect" value="https://yourwebsite.com/thanks.html">
 
 
                                     <div class="input-group mb-3">
@@ -153,6 +158,9 @@
                                         <textarea class="form-control" name="Message" placeholder="your message" required="required"></textarea>
                                     </div>
                                     <div>
+                                        <!-- google custom reCAPTCHA -->
+                                        <div class="g-recaptcha" data-sitekey="6Lfssn4oAAAAAI0BRTzZMFW6SiEbmxRV0pgKTKIx"></div>
+                                        <div id="result"></div>
                                         <button class="btn btn-custom" type="submit">Join Us</button>
                                     </div>
                                 </form>
@@ -295,5 +303,49 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+
+        <!-- from redirect script -->
+        <script>
+            const form = document.getElementById('form');
+            const result = document.getElementById('result');
+    
+            form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+            result.innerHTML = "Please wait..."
+    
+                fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: json
+                    })
+                    .then(async (response) => {
+                        let json = await response.json();
+                        if (response.status == 200) {
+                            result.innerHTML = json.message;
+                        } else {
+                            console.log(response);
+                            result.innerHTML = json.message;
+                            result.style.color = 'green';
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        result.innerHTML = "Something went wrong!";
+                        result.style.color = 'red';
+                    })
+                    .then(function() {
+                        form.reset();
+                        setTimeout(() => {
+                            result.style.display = "none";
+                        }, 3000);
+                    });
+            });
+        </script>
     </body>
 </html>
