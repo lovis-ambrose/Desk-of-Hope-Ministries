@@ -125,26 +125,37 @@
                     <div class="row align-items-center">
                         <div class="col-lg-5">
                             <div class="volunteer-form">
-                                <form>
+                                <form action="https://api.web3forms.com/submit" method="post" id="contact-form">
+                                    <input type="hidden" name="access_key" value="b555f0b1-5c7e-4c1a-8d84-6bfaebb23a9b">
+                                    <!-- from website -->
+                                    <input type="hidden" name="from_name" value="desk-of-hope-ministries.com">
+                                    <!-- to avoid spam -->
+                                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder="First Name" required="required" />
-                                        <input type="text" class="form-control" placeholder="Last Name" required="required" />
+                                        <input type="text" class="form-control" name="First Name" placeholder="First Name" required="required" />
+                                        <input type="text" class="form-control" name="Last Name" placeholder="Last Name" required="required" />
                                     </div>
                                     <div class="control-group">
-                                        <input type="text" class="form-control" placeholder="Address" required="required" />
+                                        <input type="text" class="form-control" name="Address" placeholder="Address" required="required" />
                                     </div>
                                     <div class="control-group">
-                                        <input type="email" class="form-control" placeholder="Email" required="required" />
+                                        <input type="email" class="form-control" name="Email" placeholder="Email" required="required" />
                                     </div>
                                     <div class="control-group">
-                                        <input type="text" class="form-control" placeholder="phone number" required="required" />
+                                        <input type="text" class="form-control" name="Phone Number" placeholder="phone number" required="required" />
                                     </div>
                                     <div class="control-group">
-                                        <textarea class="form-control" placeholder="Reason for joining us" required="required"></textarea>
+                                        <input class="form-control" name="subject" placeholder="subject" required="required" />
+                                    </div>
+                                    <div class="control-group">
+                                        <textarea class="form-control" name="Message" placeholder="your message" required="required"></textarea>
                                     </div>
                                     <div>
                                         <button class="btn btn-custom" type="submit">Join Us</button>
                                     </div>
+                                    <p id="status-message"></p>
                                 </form>
                             </div>
                         </div>
@@ -285,5 +296,55 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+
+        <!-- script to clear form data after submission -->
+        <script>
+            document.getElementById('contact-form').addEventListener('submit', function (e) {
+                e.preventDefault(); // Prevent the form from submitting traditionally
+            
+                // Get form data
+                const formData = new FormData(this);
+            
+                // Reference to the status message element
+                const statusMessage = document.getElementById('status-message');
+            
+                // Submit the form data using Web3Forms AJAX submission
+                fetch(this.action, {
+                    method: this.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Check if the form submission was successful
+                    if (data.success) {
+                        // Reset the form
+                        this.reset();
+                        statusMessage.textContent = 'Message sent successfully!';
+                        statusMessage.style.color = 'green';
+            
+                        // Automatically hide the success message after 3 seconds
+                        setTimeout(function () {
+                            statusMessage.textContent = '';
+                        }, 3000);
+                    } else {
+                        statusMessage.textContent = 'Message failed to send. Fill all fields and check reCAPTCHA.';
+                        statusMessage.style.color = 'red';
+            
+                        // Automatically hide the success message after 3 seconds
+                        setTimeout(function () {
+                            statusMessage.textContent = '';
+                        }, 3000);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
+            
+        </script>
     </body>
 </html>
