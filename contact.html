@@ -133,14 +133,15 @@
                     <img src="img/contact.jpg" alt="Image">
                 </div>
                 <div class="contact-form">
-                    <input type="hidden" name="access_key" value="b555f0b1-5c7e-4c1a-8d84-6bfaebb23a9b">
-                    <!-- from website -->
-                    <input type="hidden" name="from_name" value="desk-of-hope-ministries.com [Contact Us]">
-                    <!-- to avoid spam -->
-                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    <form name="sentMessage" id="contactform">
+                        <!-- access key -->
+                        <input type="hidden" name="access_key" value="b555f0b1-5c7e-4c1a-8d84-6bfaebb23a9b">
+                        <!-- from website -->
+                        <input type="hidden" name="from_name" value="desk-of-hope-ministries.com [Contact Us]">
+                        <!-- to avoid spam -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
                     
-                    <form name="sentMessage" id="contactform">
                         <div class="control-group">
                             <input type="text" class="form-control" name="Name" placeholder="Your Name" required="required" />
                             <p id="success"></p>
