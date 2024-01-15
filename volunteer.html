@@ -7,9 +7,6 @@
         <meta content="Free Website Template" name="keywords">
         <meta content="Free Website Template" name="description">
 
-        <!-- custom reCAPTCHA -->
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
         <!-- Favicon -->
         <link href="./img/logo/logo.png" rel="icon">
 
@@ -134,9 +131,7 @@
                                     <input type="hidden" name="from_name" value="desk-of-hope-ministries.com">
                                     <!-- to avoid spam -->
                                     <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                                    <!-- Custom redirect URL -->
-                                    <input type="hidden" name="redirect" value="https://yourwebsite.com/thanks.html">
-
+                                    
 
                                     <div class="input-group mb-3">
                                         <input type="text" class="form-control" name="First Name" placeholder="First Name" required="required" />
@@ -157,9 +152,10 @@
                                     <div class="control-group">
                                         <textarea class="form-control" name="Message" placeholder="your message" required="required"></textarea>
                                     </div>
+                                    <!-- custom hCaptcha -->
+                                    <div class="h-captcha" data-captcha="true"></div>
+                                    <div id="capture"></div>
                                     <div>
-                                        <!-- google custom reCAPTCHA -->
-                                        <div class="g-recaptcha" data-sitekey="6Lfssn4oAAAAAI0BRTzZMFW6SiEbmxRV0pgKTKIx"></div>
                                         <div id="result"></div>
                                         <button class="btn btn-custom" type="submit">Join Us</button>
                                     </div>
@@ -304,18 +300,32 @@
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
 
+        <!-- hCapture -->
+        <script src="https://web3forms.com/client/script.js" async defer></script>
+
         <!-- from redirect script -->
         <script>
             const form = document.getElementById('form');
             const result = document.getElementById('result');
-    
+
             form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(form);
-            const object = Object.fromEntries(formData);
-            const json = JSON.stringify(object);
-            result.innerHTML = "Please wait..."
-    
+                e.preventDefault();
+
+                // Get hCaptcha response
+                const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+
+                if (!hCaptcha) {
+                    capture.innerHTML = ("Please fill out the captcha field");
+                    capture.style.color = 'red';
+                    return;
+                }
+
+                const formData = new FormData(form);
+                const object = Object.fromEntries(formData);
+                const json = JSON.stringify(object);
+
+                result.innerHTML = "Please wait...";
+
                 fetch('https://api.web3forms.com/submit', {
                         method: 'POST',
                         headers: {
