@@ -7,6 +7,9 @@
         <meta content="Free Website Template" name="keywords">
         <meta content="Free Website Template" name="description">
 
+        <!-- custom reCAPTCHA -->
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
         <!-- Favicon -->
         <link href="./img/logo/logo.png" rel="icon">
 
@@ -153,9 +156,11 @@
                                         <textarea class="form-control" name="Message" placeholder="your message" required="required"></textarea>
                                     </div>
                                     <div>
+                                        <!-- google custom reCAPTCHA -->
+                                        <div class="g-recaptcha" data-sitekey="6Lfssn4oAAAAAI0BRTzZMFW6SiEbmxRV0pgKTKIx"></div>
+                                        <p id="status-message"></p>
                                         <button class="btn btn-custom" type="submit">Join Us</button>
                                     </div>
-                                    <p id="status-message"></p>
                                 </form>
                             </div>
                         </div>
