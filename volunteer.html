@@ -313,12 +313,14 @@
                 // Reference to the status message element
                 const statusMessage = document.getElementById('status-message');
             
+                // Convert form data to URL-encoded format
+                const urlEncodedData = new URLSearchParams(formData).toString();
+            
                 // Submit the form data using Web3Forms AJAX submission
                 fetch(this.action, {
                     method: this.method,
-                    body: formData,
+                    body: urlEncodedData,
                     headers: {
-                        'Accept': 'application/json',
                         'Content-Type': 'application/x-www-form-urlencoded'
                     }
                 })
