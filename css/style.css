@@ -1463,6 +1463,7 @@ a:focus {
 
 .event .event-item img {
     width: 100%;
+    height: 350px;
 }
 
 .event .event-content {
@@ -1587,6 +1588,7 @@ a:focus {
     position: relative;
     width: 100%;
     overflow: hidden;
+    height: 250px;
 }
 
 .blog .blog-img img {
@@ -1642,6 +1644,21 @@ a:focus {
 
 .blog .blog-meta p:last-child {
     margin: 0;
+}
+/********* blog details CSS *********/
+.row .card img{
+    height: 400px;
+}
+
+.sidebar .list-unstyled img{
+    height: 200px;
+}
+
+.sidebar .list-unstyled{
+    transition: .5s;
+}
+.sidebar .list-unstyled:hover{
+    transform: scale(1.1);
 }
 
 
