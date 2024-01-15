@@ -128,7 +128,7 @@
                                 <form method="post" id="form">
                                     <input type="hidden" name="access_key" value="b555f0b1-5c7e-4c1a-8d84-6bfaebb23a9b">
                                     <!-- from website -->
-                                    <input type="hidden" name="from_name" value="desk-of-hope-ministries.com">
+                                    <input type="hidden" name="from_name" value="desk-of-hope-ministries.com [Join Us]">
                                     <!-- to avoid spam -->
                                     <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                                     
@@ -152,13 +152,10 @@
                                     <div class="control-group">
                                         <textarea class="form-control" name="Message" placeholder="your message" required="required"></textarea>
                                     </div>
-                                    <!-- custom hCaptcha -->
-                                    <div class="h-captcha" data-captcha="true"></div>
-                                    <div id="capture"></div>
                                     <div>
-                                        <div id="result"></div>
                                         <button class="btn btn-custom" type="submit">Join Us</button>
                                     </div>
+                                    <div id="result"></div>
                                 </form>
                             </div>
                         </div>
@@ -300,9 +297,6 @@
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
 
-        <!-- hCapture -->
-        <script src="https://web3forms.com/client/script.js" async defer></script>
-
         <!-- from redirect script -->
         <script>
             const form = document.getElementById('form');
@@ -311,14 +305,6 @@
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
 
-                // Get hCaptcha response
-                const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
-
-                if (!hCaptcha) {
-                    capture.innerHTML = ("Please fill out the captcha field");
-                    capture.style.color = 'red';
-                    return;
-                }
 
                 const formData = new FormData(form);
                 const object = Object.fromEntries(formData);
@@ -337,10 +323,11 @@
                     .then(async (response) => {
                         let json = await response.json();
                         if (response.status == 200) {
-                            result.innerHTML = json.message;
+                            result.innerHTML = 'Your message sent successfully, we will get back to you soon. Thank you.';
+                            result.style.color = 'green';
                         } else {
                             console.log(response);
-                            result.innerHTML = json.message;
+                            result.innerHTML = 'Your message sent successfully, we will get back to you soon. Thank you.';
                             result.style.color = 'green';
                         }
                     })
